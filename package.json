@@ -1,0 +1,20 @@
+{
+  "name": "bigview.js",
+  "version": "1.0.0",
+  "description": "结合bigview Node.js模块使用的浏览器端实现",
+  "main": "bigview.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i5ting/bigview.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i5ting/bigview.js/issues"
+  },
+  "homepage": "https://github.com/i5ting/bigview.js#readme"
+}
