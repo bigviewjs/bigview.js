@@ -62,7 +62,7 @@ var Bigview = function () {
     };
 
     this.on('pageletArrave', function(payload) {
-    
+        console.log(payload);
     })
 };
 
