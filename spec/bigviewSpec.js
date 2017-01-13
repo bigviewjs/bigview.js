@@ -22,6 +22,11 @@ describe("Bigview Test", function() {
             expect(_payload.html).toEqual(payload.html);    
         });
         
+        bigview.on('pageletArrave', function(_payload) {
+            console.log('xxxttt domid pageletArrave')
+            expect(_payload.domid).toEqual(payload.domid);    
+        });
+        
         bigview.view(payload);
     });
 
