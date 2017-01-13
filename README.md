@@ -3,13 +3,9 @@
 结合bigview Node.js模块使用的浏览器端实现
 
 
-- performance
-- ready
-- onPageletArrive(domid, js, css, html)
-- end
+## Client (on Browser)
 
-
-## ready
+### ready
 
 ```js
 // 当布局输出完成的时候，触发
@@ -18,7 +14,7 @@ bigview.ready(function(data){
 })
 ```
 
-## end
+### end
 
 ```js
 // 当所有模块都是输出完成的时候触发
@@ -49,6 +45,7 @@ bigview.on('pageletArrave',function(payload={
 
 ```js
 bigview.on('domid',function(payload={
+  domid='',
   js=[], 
   css=[], 
   html='',
@@ -58,9 +55,37 @@ bigview.on('domid',function(payload={
 })
 ```
 
-### on error
+### on error event
 
-## view
+```js
+bigview.on('error',function(payload={
+  domid='',
+  js=[], 
+  css=[], 
+  html='',
+  error=undefined
+}) {
+
+})
+```
+
+## Server
+
+此方法给Node.js模块bigview使用，不对外使用
+
+- ready()
+- view()
+- end()
+
+### ready
+
+```js
+// 当布局输出完成的时候，触发
+bigview.ready({})
+
+```
+
+### view
 
 ```js
 <!--默认行为
@@ -71,10 +96,21 @@ bigview.on('domid',function(payload={
 // 当浏览器收到pagelet模块，并且js和css加载完成之后触发
 // 默认是$(domid).html(html)
 // payload为额外信息，默认为{}
-bigview.view(function(payload={domid, html='',}) {
-  bigview.trigger('pageletArrave')
-  bigview.trigger('domid')
+bigview.view(payload={
+  domid='',
+  js=[], 
+  css=[], 
+  html='',
+  error=undefined
 })
+```
+
+### end
+
+```js
+// 当所有模块都是输出完成的时候触发
+bigview.end({})
+
 ```
 
 ## Event
