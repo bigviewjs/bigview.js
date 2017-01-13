@@ -30,9 +30,7 @@ BigEvent.prototype.trigger = function(eventName) {
     };
 };
 
-
 BigEvent.extend = function(obj) {
-    console.log(obj)
     var functions = [
         'on',
         'off',
@@ -53,7 +51,6 @@ BigEvent.extend = function(obj) {
 var Bigview = function () {
     // payload={domid, html='',}
     this.view = function(payload) {
-        console.log(this)
         this.trigger('pageletArrave', payload);
 
         if(payload.domid) {
