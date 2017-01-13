@@ -6,15 +6,17 @@ describe("Bigview Test", function() {
         domid : 'xxx',
         html : "<h1>ss</h1>"
     }
-    it("test pageletArrave", function() { 
-        bigview.on('pageletArrave', function(_payload) {
-                        console.log('xxxttt pageletArrave')
-            expect(_payload.domid).toEqual(payload.domid);    
-        });
-        
-        bigview.view(payload);
+
+    it("test ready", function() { 
+        bigview.ready();
     });
     
+    it("test ready", function() { 
+        bigview.ready = function () {
+            console.log('ready2')
+        }
+        bigview.ready();
+    });
     
     it("test domid", function() { 
         bigview.on('xxx', function(_payload) {
@@ -30,4 +32,12 @@ describe("Bigview Test", function() {
         bigview.view(payload);
     });
 
+    it("test pageletArrave", function() { 
+        bigview.on('pageletArrave', function(_payload) {
+                        console.log('xxxttt pageletArrave')
+            expect(_payload.domid).toEqual(payload.domid);    
+        });
+        
+        bigview.view(payload);
+    });
 });

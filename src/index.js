@@ -57,6 +57,14 @@ var Bigview = function () {
             this.trigger(payload.domid, payload);
         }
     };
+    
+    this.ready = function(data) {
+        console.log('ready')
+    };
+    
+    this.end = function(data) {
+        console.log('end')
+    };
 
     this.on('pageletArrave', function(payload) {
         console.log(payload)
