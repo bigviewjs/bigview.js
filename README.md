@@ -150,3 +150,4 @@ payload里有js和css，如果想处理加载完css或js的事件，可以采用
 
 - https://github.com/rgrove/lazyload
 - https://github.com/cujojs/curl
+- https://github.com/seajs/seajs-css/
