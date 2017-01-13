@@ -60,14 +60,24 @@ var Bigview = function () {
     
     this.ready = function(data) {
         console.log('ready')
+        this.trigger('ready', data)
     };
     
     this.end = function(data) {
         console.log('end')
+        this.trigger('end', data)
+    };
+    
+    this.error = function(data) {
+        console.log('error')
+        this.trigger('error', data)
     };
 
-    this.on('pageletArrave', function(payload) {
+    this.on('pageletArrive', function(payload) {
         console.log(payload)
+        if(payload.error) {
+          this.trigger('error', payload)  
+        }
     });
 };
 

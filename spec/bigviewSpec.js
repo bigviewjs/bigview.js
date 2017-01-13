@@ -18,14 +18,25 @@ describe("Bigview Test", function() {
         bigview.ready();
     });
     
+    it("test end", function() { 
+        bigview.end();
+    });
+    
+    it("test end", function() { 
+        bigview.end = function () {
+            console.log('end2')
+        }
+        bigview.end();
+    });
+    
     it("test domid", function() { 
         bigview.on('xxx', function(_payload) {
             console.log('xxxttt domid')
             expect(_payload.html).toEqual(payload.html);    
         });
         
-        bigview.on('pageletArrave', function(_payload) {
-            console.log('xxxttt domid pageletArrave')
+        bigview.on('pageletArrive', function(_payload) {
+            console.log('xxxttt domid pageletArrive')
             expect(_payload.domid).toEqual(payload.domid);    
         });
         
@@ -33,8 +44,8 @@ describe("Bigview Test", function() {
     });
 
     it("test pageletArrave", function() { 
-        bigview.on('pageletArrave', function(_payload) {
-                        console.log('xxxttt pageletArrave')
+        bigview.on('pageletArrive', function(_payload) {
+                        console.log('xxxttt pageletArrive')
             expect(_payload.domid).toEqual(payload.domid);    
         });
         
