@@ -68,9 +68,9 @@ var Bigview = function () {
         this.trigger('end', data)
     };
     
-    this.error = function(data) {
+    this.error = function(payload) {
         console.log('error')
-        this.trigger('error', data)
+        this.trigger('error', payload)
     };
 
     this.on('pageletArrive', function(payload) {

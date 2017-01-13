@@ -79,8 +79,31 @@ bigview.view(function(payload={domid, html='',}) {
 
 ## Event
 
+根据jQuery的事件类似，只提供3个基础方法
+
+- on 绑定事件
+- off 移除事件
+- trigger 触发事件
+
 ### on
+
+```js
+    bigview.on('pageletArrive', function(payload) {
+        console.log(payload)
+        if(payload.error) {
+          bigview.trigger('error', payload)  
+        }
+    });
+```
 
 ### off
 
+```js
+    bigview.of('error', payload)  
+```
+
 ### trigger
+
+```js
+    bigview.trigger('error', payload)  
+```
