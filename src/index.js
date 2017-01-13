@@ -62,12 +62,11 @@ var Bigview = function () {
     };
 
     this.on('pageletArrave', function(payload) {
-        console.log(payload);
-    })
+        console.log(payload)
+    });
 };
 
-BigEvent.extend(Bigview)
-
+BigEvent.extend(Bigview);
 
 window.bigview = new Bigview();
 
