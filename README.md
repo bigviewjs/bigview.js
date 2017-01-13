@@ -143,3 +143,10 @@ bigview.end({})
 ```js
     bigview.trigger('error', payload)  
 ```
+
+## 扩展
+
+payload里有js和css，如果想处理加载完css或js的事件，可以采用下面2种
+
+- https://github.com/rgrove/lazyload
+- https://github.com/cujojs/curl
