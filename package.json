@@ -4,7 +4,7 @@
   "description": "结合bigview Node.js模块使用的浏览器端实现",
   "main": "bigview.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
