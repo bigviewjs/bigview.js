@@ -49,36 +49,56 @@ BigEvent.extend = function(obj) {
 };
 
 var Bigview = function () {
+    var self = this;
     // payload={domid, html='',}
     this.view = function(payload) {
-        this.trigger('pageletArrave', payload);
+        self.trigger('pageletArrave', payload);
 
         if(payload.domid) {
-            this.trigger(payload.domid, payload);
+            self.trigger(payload.domid, payload);
         }
     };
     
     this.ready = function(data) {
         console.log('ready')
-        this.trigger('ready', data)
+        self.trigger('ready', data)
     };
     
     this.end = function(data) {
         console.log('end')
-        this.trigger('end', data)
+        self.trigger('end', data)
     };
     
     this.error = function(payload) {
         console.log('error')
-        this.trigger('error', payload)
+        self.trigger('error', payload)
     };
 
     this.on('pageletArrive', function(payload) {
         console.log(payload)
         if(payload.error) {
-          this.trigger('error', payload)  
+          self.trigger('error', payload)  
+        }
+
+        if(payload.domid && payload.html) {
+            self.replaceHtml(payload.domid, payload.html);
         }
     });
+
+    //http://blog.stevenlevithan.com/archives/faster-than-innerhtml
+    this.replaceHtml = function(el, html) {
+    	var oldEl = typeof el === "string" ? document.getElementById(el) : el;
+    	/*@cc_on // Pure innerHTML is slightly faster in IE
+    		oldEl.innerHTML = html;
+    		return oldEl;
+    	@*/
+    	var newEl = oldEl.cloneNode(false);
+    	newEl.innerHTML = html;
+    	oldEl.parentNode.replaceChild(newEl, oldEl);
+    	/* Since we just removed the old element from the DOM, return a reference
+    	to the new element, which can be used to restore variable references. */
+    	return newEl;
+    };
 };
 
 BigEvent.extend(Bigview);
