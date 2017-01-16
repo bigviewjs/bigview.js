@@ -115,7 +115,7 @@ bigview.end({})
 
 ## Event
 
-根据jQuery的事件类似，只提供3个基础方法
+跟jQuery的事件类似，只提供3个基础方法
 
 - on 绑定事件
 - off 移除事件
@@ -146,7 +146,7 @@ bigview.end({})
 
 ## 扩展
 
-payload里有js和css，如果想处理加载完css或js的事件，可以采用下面2种
+payload里有js和css，如果想处理加载完css或js的事件，可以采用下面3种
 
 - https://github.com/rgrove/lazyload
 - https://github.com/cujojs/curl
