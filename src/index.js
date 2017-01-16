@@ -52,7 +52,7 @@ var Bigview = function () {
     var self = this;
     // payload={domid, html='',}
     this.view = function(payload) {
-        self.trigger('pageletArrave', payload);
+        self.trigger('pageletArrive', payload);
 
         if(payload.domid) {
             self.trigger(payload.domid, payload);
@@ -92,6 +92,10 @@ var Bigview = function () {
     		oldEl.innerHTML = html;
     		return oldEl;
     	@*/
+        if(!oldEl){
+            console.log(el + ' is not exist in dom')
+            return
+        }
     	var newEl = oldEl.cloneNode(false);
     	newEl.innerHTML = html;
     	oldEl.parentNode.replaceChild(newEl, oldEl);
