@@ -48,11 +48,11 @@ BigEvent.extend = function(obj) {
     };
 };
 
-var Bigview = function (debug) {
+var Bigview = function () {
     var self = this;
     
     this.log = function(str) {
-        if (debug === true) {
+        if (this.debug === true) {
             console.log(str)
         }
     }
